@@ -1,0 +1,84 @@
+.loveDays {
+    text-align: center;
+    padding: 40px;
+    animation: fadeIn 1s ease forwards;
+
+    h2 {
+        font-size: 3rem;
+        color: #ff6b81;
+        margin-bottom: 10px;
+    }
+
+    .days {
+        display: block;
+        font-size: 4rem; // To lên
+        color: #fffa65; // Màu vàng nổi bật
+        font-weight: bold;
+        margin: 20px 0;
+        animation: pulse 2s infinite; // Hiệu ứng nhấp nháy nhẹ
+        text-shadow: 0 0 10px #fffa65, 0 0 20px #fffa65;
+    }
+
+    p {
+        font-size: 1.6rem;
+        color: #fff;
+        margin-top: 20px;
+    }
+
+    .increaseButton {
+        padding: 10px 20px;
+        font-size: 1.4rem;
+        background-color: #ff6b81;
+        text-align: center;
+        vertical-align: center;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #ff4757;
+        }
+    }
+}
+
+// Animation khi xuất hiện
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Animation cho số ngày nhấp nháy nhẹ nhàng
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .loveDays {
+        h2 {
+            font-size: 2rem;
+        }
+        .days {
+            font-size: 3rem;
+        }
+        .increaseButton {
+            padding: 10px 15px;
+            font-size: 1rem;
+        }
+    }
+}

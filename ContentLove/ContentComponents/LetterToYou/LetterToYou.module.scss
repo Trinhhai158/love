@@ -1,0 +1,29 @@
+.letter {
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+    padding: 20px;
+
+    h2 {
+        font-size: 3rem;
+        color: #ff66a3;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.8rem;
+        color: #ffe4f2;
+        padding: 0 10px;
+        line-height: 1.6;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

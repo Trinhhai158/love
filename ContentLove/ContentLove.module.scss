@@ -1,0 +1,119 @@
+.content_Love {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    // background-color: plum;
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    transition: all 1.2s linear;
+    padding: 10px;
+}
+.content_Love nav {
+    width: 20%;
+}
+.content_Love .list .item {
+    padding: 20px;
+    background-color: plum;
+    text-align: center;
+    margin: 50px 0;
+    cursor: pointer;
+    border-radius: 10px;
+    transform: translateX(-110%);
+
+    &.active::after {
+        content: "💕";
+        opacity: 1;
+        position: absolute;
+        right: -10%;
+        font-size: 2rem;
+        top: 50%;
+        transition: all 1.3s linear;
+    }
+}
+@for $i from 1 through 5 {
+    .content_Love .list .item:nth-child(#{$i}) {
+        animation: fadeIn 1s ease forwards;
+        animation-delay: $i * 0.2s; // mỗi item chậm hơn 0.2s so với cái trước
+    }
+}
+.content_Love .list .item:active {
+    background-color: palevioletred;
+}
+@keyframes fadeIn {
+    0% {
+        transform: translateX(-110%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+// Phần nội dung chính
+.section {
+    overflow-y: scroll;
+    margin: 0 10px;
+    width: calc(80% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    min-height: 500px;
+    max-height: 500px;
+}
+.section .title {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 900;
+    font-style: italic;
+    margin-top: 20px;
+    animation: anmTitle 1.2s linear infinite, anmTitleX 3s linear forwards;
+}
+@keyframes anmTitle {
+    0%,
+    100% {
+        color: yellowgreen;
+    }
+    50% {
+        text-shadow: 0 0 15px greenyellow, 0 0 25px red;
+    }
+}
+@keyframes anmTitleX {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.section .article {
+    margin-top: 40px;
+    max-width: 100%;
+    // background-color: antiquewhite;
+}
+
+@media (max-width: 768px) {
+    .content_Love nav {
+        width: calc(100% - 20px);
+    }
+    .section {
+        width: calc(100% - 20px);
+        padding: 0 20px;
+    }
+    .section .article {
+        margin-top: 40px;
+        width: 100%;
+        // background-color: antiquewhite;
+    }
+    .content_Love .list .item {
+        margin: 10px 0;
+        &.active::after {
+            right: 0;
+        }
+    }
+    .section .title {
+        font-size: 2rem;
+    }
+}

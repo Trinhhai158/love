@@ -1,0 +1,141 @@
+.Pass_Love {
+    margin: auto;
+    background-color: palevioletred;
+    animation: AnmPasslove 2.2s linear forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: calc(100% - 20px);
+    // overflow: hidden;
+    // position: relative;
+}
+.Pass_Love .title {
+    color: red;
+    font-size: 3rem;
+    font-weight: 900;
+    animation: anmTitlePassLove 1.2s linear infinite;
+}
+@keyframes anmTitlePassLove {
+    0%,
+    100% {
+        transform: rotateZ(-20deg);
+    }
+    50% {
+        transform: rotateZ(20deg);
+    }
+}
+.Pass_Love .input {
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    border: 6px solid transparent;
+    outline: none;
+    &:focus {
+        border: 6px solid plum;
+    }
+}
+
+.Pass_Love .desc {
+    text-align: center;
+    color: yellow;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: anmDescPassLove 10.2s linear infinite;
+}
+@keyframes anmDescPassLove {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes AnmPasslove {
+    0% {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+    55% {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    100% {
+        width: 700px;
+        height: 350px;
+        border-radius: 10px;
+    }
+}
+.btn_Heart {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    color: red;
+    font-size: 5rem;
+    animation: anmBtnHeart 0.8s linear infinite;
+    cursor: pointer;
+    &.jump {
+        animation: jumpOut 3s ease-out forwards;
+    }
+}
+@keyframes anmBtnHeart {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+@keyframes jumpOut {
+    0% {
+        opacity: 1;
+    }
+    35% {
+        top: 20%;
+        opacity: 1;
+    }
+    50% {
+        top: 30%;
+        opacity: 1;
+    }
+    80% {
+        top: 40%;
+        opacity: 1;
+    }
+    100% {
+        top: 50%;
+        opacity: 0;
+    }
+}
+
+// percentage
+.percentage {
+    position: relative;
+    width: 400px;
+    height: 30px;
+    background-color: transparent;
+    border: 10px solid palevioletred;
+    margin: auto;
+    border-radius: 10px;
+    &::before {
+        position: absolute;
+        content: "";
+        height: 30px;
+        background-color: red;
+        animation: anmPercentage 3s linear forwards;
+    }
+}
+@keyframes anmPercentage {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}

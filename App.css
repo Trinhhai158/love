@@ -1,0 +1,76 @@
+.App {
+    font-family: "Pacifico", cursive;
+    height: 100vh;
+    width: 100vw;
+    background-color: pink;
+    display: flex;
+    overflow: hidden;
+}
+/* Áp dụng cho toàn bộ trang */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track - phần nền */
+::-webkit-scrollbar-track {
+    background: #ffeef5; /* Hồng rất nhẹ */
+    border-radius: 10px;
+}
+
+/* Thumb - phần kéo */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        #f9a8d4,
+        #fbcfe8
+    ); /* Gradient hồng nhẹ */
+    border-radius: 10px;
+}
+
+/* Khi hover vào thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #f472b6, #f9a8d4);
+    cursor: pointer;
+}
+
+.content {
+    margin: 0 auto;
+    width: 1350px;
+    /* background-color: orange; */
+    max-width: calc(100% - 20px);
+    display: flex;
+    overflow: hidden;
+    /* padding: 10px; */
+}
+html {
+    font-size: 62.5%;
+}
+.div_Panda {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    z-index: 1;
+    animation: anmPanda 1.2s linear infinite;
+}
+@keyframes anmPanda {
+    0%,
+    100% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+        filter: drop-shadow(0 0 15px pink);
+    }
+}
+.div_Panda img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+/* điện thoại */
+@media (max-width: 768px) {
+    .div_Panda {
+        display: none;
+    }
+}
